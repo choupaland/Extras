@@ -1,0 +1,36 @@
+{
+    "version": "0.4.0",
+    "description": "Boilr is here to help you create projects from boilerplate templates.",
+    "homepage": "https://github.com/choupaland/boilr",
+    "license": "MIT|Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/choupaland/boilr/releases/download/latest/boilr.exe",
+            "hash": "ABC37D07478F3BB35E886431E66EE05D35014536A8784D049662FECDE06190AE"
+        }
+    },
+    "bin": [
+        [
+            "boilr.exe",
+            "boilr"
+        ]
+    ],
+    "shortcuts": [
+        [
+            "boilr.exe",
+            "boilr"
+        ]
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repositories/403282138/releases/latest",
+        "jsonpath": "$.assets..browser_download_url",
+        "regex": "/v\\.([\\d.]+)/boilr\\.exe"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/choupaland/boilr/releases/download/v.$version/boilr.exe"
+            }
+        }
+    }
+}
